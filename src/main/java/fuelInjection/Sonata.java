@@ -1,15 +1,17 @@
 package fuelInjection;
 
-public class Sonata extends Car {
+import java.util.HashMap;
+
+public class Sonata implements Car {
+    private static final int FUEL_EFFICIENCY = 10;
     private final int distance;
-    private final int fuelEfficiency = 10;
     private final String carName = "Sonata";
     public Sonata(int distance){
         this.distance = distance;
     }
     @Override
-    protected int calculateFuelEfficiency() {
-        return distance / fuelEfficiency;
+    public int calculateFuelEfficiency() {
+        return distance / FUEL_EFFICIENCY;
     }
     @Override
     public String getCarName() {

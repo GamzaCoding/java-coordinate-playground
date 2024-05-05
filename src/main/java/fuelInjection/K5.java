@@ -1,15 +1,15 @@
 package fuelInjection;
 
-public class K5 extends Car {
+public class K5 implements Car {
+    private static final int FUEL_EFFICIENCY = 13;
     private final int distance;
-    private final int fuelEfficiency = 13;
     private final String carName = "K5";
     public K5(int distance){
         this.distance = distance;
     }
     @Override
-    protected int calculateFuelEfficiency() {
-        return distance / fuelEfficiency;
+    public int calculateFuelEfficiency() {
+        return distance / FUEL_EFFICIENCY;
     }
 
     @Override

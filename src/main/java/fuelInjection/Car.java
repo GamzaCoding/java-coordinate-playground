@@ -1,7 +1,8 @@
 package fuelInjection;
 
-public abstract class Car {
-    protected abstract int calculateFuelEfficiency();
+public interface Car {
 
-    public abstract String getCarName();
+    public int calculateFuelEfficiency();
+    public String getCarName();
+
 }
