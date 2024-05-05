@@ -11,6 +11,12 @@
  * 좌표값을 두 개 입력한 경우, 두 점을 있는 직선으로 가정한다. 좌표값과 좌표값 사이는 '-'무자로 구분한다.
  * 직선인 경우는 두 점 사이 거리를 계산해서 출력한다.
 
+## 실행결과
+<img width="877" alt="실행결과" src="https://github.com/GamzaCoding/java-coordinate-playground/assets/133114323/1a1171f4-2292-47d3-b332-40a1386b91c6">
+
+<img width="329" alt="실행결과2" src="https://github.com/GamzaCoding/java-coordinate-playground/assets/133114323/d5eee06c-fd8e-4084-920b-60a4ddfd9155">
+
+<img width="868" alt="실행결과3" src="https://github.com/GamzaCoding/java-coordinate-playground/assets/133114323/59681287-2041-4764-b49d-e7eace15991f">
 
 ## 힌트
 * 두 점 사이 거리는 제곱근((A.x - B.x)^제곱 + (A.y - B.y)^제곱) 공식으로 계산할 수 있다.
