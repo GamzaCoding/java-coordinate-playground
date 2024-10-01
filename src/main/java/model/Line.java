@@ -1,6 +1,7 @@
 package model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Line implements Shape {
 
@@ -36,7 +37,7 @@ public class Line implements Shape {
         return pointList.get(0).calculateDistance(pointList.get(1));
     }
     @Override
-    public String getDistanceInfo(){
+    public String getAreaInfo(){
         return RESULT_PREFIX + calculateArea();
     }
 
@@ -45,4 +46,16 @@ public class Line implements Shape {
         return pointList.stream().anyMatch(point -> point.isSame(x,y));
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Line line = (Line) o;
+        return Objects.equals(pointList, line.pointList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pointList);
+    }
 }

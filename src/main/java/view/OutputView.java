@@ -15,7 +15,7 @@ public class OutputView {
         showHorizontalAxis();
         showHorizontalNumbers();
 
-        System.out.println(shape.getDistanceInfo());
+        System.out.println(shape.getAreaInfo());
     }
 
     private static void showVertical(Shape shape){

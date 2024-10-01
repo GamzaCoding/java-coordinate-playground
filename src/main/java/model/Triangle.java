@@ -1,5 +1,6 @@
 package model;
 import java.util.List;
+import java.util.Objects;
 
 public class Triangle implements Shape{
     public static final int POINTS_SIZE = 3;
@@ -39,7 +40,20 @@ public class Triangle implements Shape{
     }
 
     @Override
-    public String getDistanceInfo() {
+    public String getAreaInfo() {
         return RESULT_PREFIX + calculateArea();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle triangle = (Triangle) o;
+        return Objects.equals(pointList, triangle.pointList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pointList);
     }
 }

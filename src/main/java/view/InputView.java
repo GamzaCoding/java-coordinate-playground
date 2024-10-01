@@ -30,7 +30,7 @@ public class InputView {
         List<PointDto> dtoList = splitPoint(inputPoint());
         validatePointRange(dtoList);
 
-        return ShapeFactory.getInstance(createShape(dtoList));
+        return ShapeFactory.createShape(createShape(dtoList));
     }
 
     private List<Point> createShape(List<PointDto> dtoList){

@@ -22,8 +22,9 @@ public class LineTest {
     }
 
     @Test
+    @DisplayName("길이 값 테스트")
     void calculateDistance(){
-        List<Point> points = Arrays.asList(new Point(10,10), new Point(14,15));
+        List<Point> points = Arrays.asList(Point.create(10,10), Point.create(14,15));
         Line line = new Line(points);
         double distance = line.calculateArea();
         double expected = 6.4;

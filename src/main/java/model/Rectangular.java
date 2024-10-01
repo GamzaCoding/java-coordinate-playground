@@ -1,14 +1,11 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 
 import static java.util.stream.Collectors.toSet;
 
-public class Square implements Shape{
+public class Rectangular implements Shape{
     public static final int POINTS_SIZE = 4;
     public static final int ALLOWED_X_OR_Y_POINT_VALUE_SIZE= 2;
     private static final String INVALID_POINT_SIZE
@@ -18,7 +15,7 @@ public class Square implements Shape{
 
     private final List<Point> pointList;
 
-    public Square(List<Point> points){
+    public Rectangular(List<Point> points){
         validatePointsSize(points);
         validateSquare(points);
 
@@ -77,7 +74,20 @@ public class Square implements Shape{
     }
 
     @Override
-    public String getDistanceInfo() {
+    public String getAreaInfo() {
         return RESULT_PREFIX + calculateArea();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rectangular rectangular = (Rectangular) o;
+        return Objects.equals(pointList, rectangular.pointList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pointList);
     }
 }

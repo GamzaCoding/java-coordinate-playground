@@ -16,6 +16,10 @@ public class Point {
         this.x = x;
         this.y = y;
     }
+
+    public static Point create(int x, int y){
+        return new Point(x,y);
+    }
     private boolean invalidRange(int point){
         return (point < MIN_VALUE || point > MAX_VALUE);
     }
