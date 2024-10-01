@@ -1,3 +1,5 @@
+package model;
+
 import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,7 +25,7 @@ public class LineTest {
     void calculateDistance(){
         List<Point> points = Arrays.asList(new Point(10,10), new Point(14,15));
         Line line = new Line(points);
-        double distance = line.calculateDistance();
+        double distance = line.calculateArea();
         double expected = 6.4;
 
         assertThat(distance).isEqualTo(expected, Offset.offset(0.1));

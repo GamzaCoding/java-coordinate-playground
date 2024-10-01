@@ -1,17 +1,21 @@
 package view;
 
 import model.Shape;
-public class OutView {
+public class OutputView {
     private static final String VERTICAL_AXIS = "|";
     private static final String HORIZONTAL_AXIS = "----";
     private static final String FOUR_BLANK = "    ";
-    private static final String ORIGIN = ".";
+    private static final String ORIGIN = "+";
+    private static final String POINT_SHAPE = "•";
     private static final int POSITION_MAX = 24;
-    private static final int POSITION_MIN = 0;
+    private static final int POSITION_MIN = 1;
 
-    private static void createOutView(Shape shape){
+    public static void createOutView(Shape shape){
         showVertical(shape);
         showHorizontalAxis();
+        showHorizontalNumbers();
+
+        System.out.println(shape.getDistanceInfo());
     }
 
     private static void showVertical(Shape shape){
@@ -22,7 +26,6 @@ public class OutView {
             emptyLine();
         }
     }
-
     private static void showAxisNumber(int index){
         if(index % 2 == 0){
             System.out.print(String.format("%4d", index));
@@ -34,7 +37,7 @@ public class OutView {
     private static void showPoints(Shape shape, int y){
         for(int x = POSITION_MIN; x <= POSITION_MAX; x++){
             if(shape.hasPoint(x,y)){
-                System.out.print(String.format("%4s", ORIGIN));
+                System.out.print(String.format("%4s", POINT_SHAPE));
                 continue;
             }
             System.out.print(FOUR_BLANK);
